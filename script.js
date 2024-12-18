@@ -42,3 +42,12 @@ async function writeDataToFirestore() {
 }
 
 document.getElementById('sendButton').addEventListener('click', writeDataToFirestore);
+
+
+function executeAfterDelay() {
+    const map = document.getElementById('map');
+    map.style.visibility = 'visible';
+    map.style.opacity = 1;  
+      }
+  
+  setTimeout(executeAfterDelay, 2626);
