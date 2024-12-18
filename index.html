@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logorska vatra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('resources/fire.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      /* background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+      width: 90%;
+      max-width: 500px;
+      /* margin: 10px; */
+    }
+
+    .container h1 {
+      margin-bottom: 20px;
+    }
+
+    .container input {
+      width: 95%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container p {
+        font-weight: bold;
+        margin: 20px 0;
+    }
+
+    .italic-text {
+      font-style: italic;
+    }
+
+    .underline-text {
+  text-decoration: underline;
+}
+
+    .container button {
+      padding: 10px 20px;
+      background-color: rgb(143, 9, 9);
+      color: #ccd212;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7); /* White shadow */
+    }
+
+    .container button:disabled {
+      background-color: #06c548;
+      color: black;
+      cursor: not-allowed;
+    }
+
+    .map {
+      margin-top: 50px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      display: block; /* Hidden until Send is clicked */
+      opacity: .85;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Logorska vatra</h1>
+    <p class="underline-text">Datum: 26.12.2024</p>
+    <p class="underline-text">Početak: 10.00 sati</p>
+    <input type="text" id="fullName" placeholder="Ime i prezime" required>
+    <input type="text" id="contact" placeholder="Kontakt za potvrdu (Mobitel/Instagram)" required>
+    <p class="italic-text">"Gdje vatra pucketa, tamo se pjesma rađa."</p>
+    <button id="sendButton">Prijavi se</button>
+    <p class="underline-text">Broj mjesta ograničen!</p>
+    <div class="map" id="map">
+      <iframe 
+        src="https://www.google.com/maps?q=Čokadinci,+Croatia&output=embed&z=15" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <!-- <script type="module">
+
+function handleSubmit() {
+    const fullName = document.getElementById('fullName').value.trim();
+      const contact = document.getElementById('contact').value.trim();
+
+    //   if (!fullName || !contact) {
+    //     alert('Molimo ispunite sva polja.');
+    //     return;
+    //   }
+
+      // Show the alert with user details
+     // alert(`Ime i prezime: ${fullName}\nKontakt: ${contact}`);
+
+      writeToNotepad()
+
+      document.getElementById('sendButton').innerHTML = 'Hvala!';
+    //  document.getElementById('sendButton').removeEventListener('click', handleSubmit);
+    }
+
+    function writeToNotepad() {
+
+// Example: Download the file, modify its content, and upload it again
+
+// 1. Fetch the file content from File.io
+fetch('https://www.file.io/CL5G/download/6Xx1ydDGrebo')
+  .then(response => response.text()) // Assuming the file is a text file
+  .then(data => {
+    // 2. Modify the content of the file (example: add a string)
+    const modifiedData = data + '\nNew content added by JavaScript!';
+
+    // 3. Create a Blob from the modified data
+    const blob = new Blob([modifiedData], { type: 'text/plain' });
+
+    // 4. Create a form data object to upload the modified file
+    const formData = new FormData();
+    formData.append('file', blob, 'list.txt');
+
+    // 5. Upload the modified file to a new File.io link (or another service)
+    fetch('https://file.io', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log('File uploaded to new link:', json.link);
+    })
+    .catch(error => console.error('Error uploading file:', error));
+  })
+  .catch(error => console.error('Error downloading file:', error));
+
+
+    //    let content = "ide gas"
+    //   // Hypothetical URL structure for Notepad.pw with password
+    //   const noteLink = `https://notepad.pw/b7MDFf3lR4sPkZo3sHDT/teeeest?password=yCW6f@=^Rf2J=vEvu+T5`;
+    //   window.open(noteLink, '_blank');
+    }
+
+    document.getElementById('sendButton').addEventListener('click', handleSubmit);
+  </script> -->
+</body>
+</html>
